@@ -3,7 +3,10 @@ import numpy as np
 import time
 
 
-net = cv2.dnn.readNet('yolov3-tiny.weights', 'yolov3.cfg')
+# tiny
+net = cv2.dnn.readNet('yolov3-tiny.weights', 'yolov3-tiny.cfg')
+# normal
+# net = cv2.dnn.readNet('yolov3.weights', 'yolov3.cfg')
 
 classes = []
 
