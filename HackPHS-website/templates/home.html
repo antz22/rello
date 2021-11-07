@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Rello - Home</title>
+  <meta content="" name="description">
+
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="data:image/png;base64,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" rel="icon">
+  <link href="../static/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="../static/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="../static/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="../static/vendor/aos/aos.css" rel="stylesheet">
+  <link href="../static/vendor/remixicon/remixicon.css" rel="stylesheet">
+  <link href="../static/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+  <link href="../static/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="../static/css/style.css" rel="stylesheet">
+
+  <!-- =======================================================
+  * Template Name: FlexStart - v1.7.0
+  * Template URL: https://bootstrapmade.com/flexstart-bootstrap-startup-template/
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+</head>
+
+<body>
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="header fixed-top">
+    <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
+
+      <a href="/" class="logo d-flex align-items-center">
+        <img src="../static/img/logo.png" alt="">
+        <span>Rello</span>
+      </a>
+
+      <nav id="navbar" class="navbar">
+        <ul>
+          <li><a class="nav-link scrollto active" href="/">Home</a></li>
+          <li><a class="nav-link scrollto" href="#about">About</a></li>
+          <li><a class="nav-link scrollto" href="/login">Login</a></li>
+          <li><a class="getstarted scrollto" href="/login">Get Started</a></li>
+        </ul>
+        <i class="bi bi-list mobile-nav-toggle"></i>
+      </nav><!-- .navbar -->
+
+    </div>
+  </header><!-- End Header -->
+
+  <!-- ======= Hero Section ======= -->
+  <section id="hero" class="hero d-flex align-items-center">
+
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6 d-flex flex-column justify-content-center">
+          <h1 data-aos="fade-up">We protect lives. We revolutionize driving safety.</h1>
+          <h2 data-aos="fade-up" data-aos-delay="400">Rello delivers services powered by Artificial Intelligence to protect our users on the road everyday.</h2>
+          <div data-aos="fade-up" data-aos-delay="600">
+            <div class="text-center text-lg-start">
+              <a href="/login" class="btn-get-started scrollto d-inline-flex align-items-center justify-content-center align-self-center">
+                <span>Get Started</span>
+                <i class="bi bi-arrow-right"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-6 hero-img" data-aos="zoom-out" data-aos-delay="200">
+          <img src="../static/img/carmain.svg" class="img-fluid" alt="">
+        </div>
+      </div>
+    </div>
+
+  </section><!-- End Hero -->
+
+  <main id="main">
+    <!-- ======= About Section ======= -->
+    <section id="about" class="about">
+
+      <div class="container" data-aos="fade-up">
+        <div class="row gx-0">
+
+          <div class="col-lg-6 d-flex flex-column justify-content-center" data-aos="fade-up" data-aos-delay="200">
+            <div class="content">
+              <h3>What we do at Rello</h3>
+              <h2>Our Motivation</h2>
+              <p>
+                We started out as just a group of friends with spare time surfing the interent to find something impactful to do. When we came across the HackPHS event, and were given our prompt, the dangers motorcyclists face on a daily basis stood out to us. This inspired us to create Rello, a software we developed to provide a solution to this problem.
+              </p>
+              <div class="text-center text-lg-start">
+                <a href="#" class="btn-read-more d-inline-flex align-items-center justify-content-center align-self-center">
+                  <span>Read More</span>
+                  <i class="bi bi-arrow-right"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-6 d-flex align-items-center" data-aos="zoom-out" data-aos-delay="200">
+            <img src="../static/img/about.jpg" class="img-fluid" alt="">
+          </div>
+
+        </div>
+      </div>
+
+    </section><!-- End About Section -->
+
+    <!-- ======= Values Section ======= -->
+    <section id="values" class="values">
+
+      <div class="container" data-aos="fade-up">
+
+        <header class="section-header">
+          <h2></h2>
+          <p>Our Goals</p>
+        </header>
+
+        <div class="row">
+
+          <div class="col-lg-4">
+            <div class="box" data-aos="fade-up" data-aos-delay="200">
+              <img src="../static/img/values-1.png" class="img-fluid" alt="">
+              <h3>Revolutionize motorcylists' ability to stay out of harms way</h3>
+              
+            </div>
+          </div>
+
+          <div class="col-lg-4 mt-4 mt-lg-0">
+            <div class="box" data-aos="fade-up" data-aos-delay="400">
+              <img src="../static/img/values-2.png" class="img-fluid" alt="">
+              <h3>Expand throughout the East Coast and beyond</h3>
+              
+            </div>
+          </div>
+
+          <div class="col-lg-4 mt-4 mt-lg-0">
+            <div class="box" data-aos="fade-up" data-aos-delay="600">
+              <img src="../static/img/values-3.png" class="img-fluid" alt="">
+              <h3>Constantly update and provide support for our software</h3>
+              
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </section><!-- End Values Section -->
+
+    
+
+    <!-- ======= Features Section ======= -->
+    <section id="features" class="features">
+
+      <div class="container" data-aos="fade-up">
+
+        <header class="section-header">
+          <p>According to our research, </p>
+        </header>
+
+        <div class="row">
+
+          <div class="col-lg-6">
+            <img src="../static/img/features.png" class="img-fluid" alt="">
+          </div>
+
+          <div class="col-lg-6 mt-5 mt-lg-0 d-flex">
+            <div class="row align-self-center gy-4">
+
+              <div class="col-md-6" data-aos="zoom-out" data-aos-delay="500">
+                <div class="feature-box d-flex align-items-center">
+                  <i class="bi bi-dash"></i>
+                  <h3>Motorcyclists are 29% more likely to be involved in an accident than drivers are</h3>
+                </div>
+              </div>
+
+              <div class="col-md-6" data-aos="zoom-out" data-aos-delay="200">
+                <div class="feature-box d-flex align-items-center">
+                  <i class="bi bi-dash"></i>
+                  <h3>Motorcyclists are 5 times more likely to be hurt in traffic accidents than people in cars are</h3>
+                </div>
+              </div>
+
+              <div class="col-md-6" data-aos="zoom-out" data-aos-delay="300">
+                <div class="feature-box d-flex align-items-center">
+                  <i class="bi bi-dash"></i>
+                  <h3>53% of all motorcycles crashes are left-turns, compared to right turns making just 6%</h3>
+                </div>
+              </div>
+
+              <div class="col-md-6" data-aos="zoom-out" data-aos-delay="400">
+                <div class="feature-box d-flex align-items-center">
+                  <i class="bi bi-dash"></i>
+                  <h3>Helmets are 67% effective in preventing brain injuries</h3>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+        </div> <!-- / row -->
+
+        
+
+        <!-- Feature Icons -->
+        
+
+        
+
+      </div>
+
+    </section><!-- End Features Section -->
+
+    <!-- ======= Counts Section ======= -->
+    <section id="counts" class="counts">
+      <div class="container" data-aos="fade-up">
+
+        <div class="row gy-3">
+
+          <div class="col-lg-4 col-md-6">
+            <div class="count-box">
+              <i class="bi bi-emoji-smile"></i>
+              <div>
+                <span data-purecounter-start="0" data-purecounter-end="1" data-purecounter-duration="1" class="purecounter"></span>
+                <p>Our product is built into a high-quality helmet</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6">
+            <div class="count-box">
+              <i class="bi bi-people" style="color: #bb0852;"></i>
+              <div>
+                <span data-purecounter-start="0" data-purecounter-end="2" data-purecounter-duration="1" class="purecounter"></span>
+                <p>Our product can scan the motorcyclist's surroundings and alert them of potential dangers, like left-turning cars</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6">
+            <div class="count-box">
+              <i class="bi bi-journal-richtext" style="color: #ee6c20;"></i>
+              <div>
+                <span data-purecounter-start="0" data-purecounter-end="3" data-purecounter-duration="1" class="purecounter"></span>
+                <p>Our product can then give out warnings and (INSERT SMTH)</p>
+              </div>
+            </div>
+          </div>
+
+
+        </div>
+
+      </div>
+    </section><!-- End Counts Section -->
+
+  <!-- ======= Footer ======= -->
+  <footer id="footer" class="footer">
+
+    <div class="footer-newsletter">
+      <div class="container">
+        <div class="row justify-content-center">
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-top">
+      <div class="container">
+        <div class="row gy-4">
+          <div class="col-lg-5 col-md-12 footer-info">
+            <a href="/" class="logo d-flex align-items-center">
+              <img src="../static/img/logo.png" alt="">
+              <span>Rello</span>
+            </a>
+            <p>A product fixated on improving the safety of motorcycling OR INSERT LOGO</p>
+            <div class="social-links mt-3">
+              <a href="#" class="twitter"><i class="bi bi-twitter"></i></a>
+              <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
+              <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
+              <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></a>
+            </div>
+          </div>
+
+          <div class="col-lg-2 col-6 footer-links">
+            <h4>Useful Links</h4>
+            <ul>
+              <li><i class="bi bi-chevron-right"></i> <a href="#">Home</a></li>
+              <li><i class="bi bi-chevron-right"></i> <a href="#">About us</a></li>
+              <li><i class="bi bi-chevron-right"></i> <a href="#">Services</a></li>
+              <li><i class="bi bi-chevron-right"></i> <a href="#">Terms of service</a></li>
+              <li><i class="bi bi-chevron-right"></i> <a href="#">Privacy policy</a></li>
+            </ul>
+          </div>
+
+          <div class="col-lg-2 col-6 footer-links">
+            <h4>Our Services</h4>
+            <ul>
+              <li><i class="bi bi-chevron-right"></i> <a href="#">Web Design</a></li>
+              <li><i class="bi bi-chevron-right"></i> <a href="#">Web Development</a></li>
+              <li><i class="bi bi-chevron-right"></i> <a href="#">Product Management</a></li>
+              <li><i class="bi bi-chevron-right"></i> <a href="#">Marketing</a></li>
+              <li><i class="bi bi-chevron-right"></i> <a href="#">Graphic Design</a></li>
+            </ul>
+          </div>
+
+          <div class="col-lg-3 col-md-12 footer-contact text-center text-md-start">
+            <h4>Contact Us</h4>
+            <p>
+              1016 Rt 601 <br>
+              Skillman, NJ 08558<br>
+              United States <br><br>
+              <strong>Phone:</strong> +1 123 456 7890<br>
+              <strong>Email:</strong> omar.ghanima06@gmail.com<br>
+            </p>
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="copyright">
+        &copy; Copyright <strong><span>Rello 2021.</span></strong>. All Rights Reserved
+      </div>
+      <div class="credits">
+        <!-- All the links in the footer should remain intact. -->
+        <!-- You can delete the links only if you purchased the pro version. -->
+        <!-- Licensing information: https://bootstrapmade.com/license/ -->
+        <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/flexstart-bootstrap-startup-template/ -->
+        Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+      </div>
+    </div>
+  </footer><!-- End Footer -->
+
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="https://www.gstatic.com/firebasejs/9.3.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.3.0/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.3.0/firebase-database.js"></script> 
+  <script src="../static/vendor/bootstrap/js/bootstrap.bundle.js"></script>
+  <script src="../static/vendor/aos/aos.js"></script>
+  <script src="../static/vendor/php-email-form/validate.js"></script>
+  <script src="../static/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="../static/vendor/purecounter/purecounter.js"></script>
+  <script src="../static/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="../static/vendor/glightbox/js/glightbox.min.js"></script>
+
+  <!-- Template Main JS File -->
+  <script src="../static/js/main.js"></script>
+
+</body>
+
+</html>
