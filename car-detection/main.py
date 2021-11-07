@@ -1,7 +1,18 @@
 import cv2
 import numpy as np
 import time
+import pyrebase
+import os
 
+config = {
+    "apiKey": "AIzaSyAqfgMlZh4GmHvxMXcjrXC2sRcO5jWb3_4",
+    "authDomain": "rello-189ed.firebaseapp.com",
+    "databaseURL": "https://rello-189ed.firebaseio.com/",
+    "projectId": "rello-189ed",
+    "storageBucket": "rello-189ed.appspot.com",
+    "messagingSenderId": "5243701907",  
+    # "appId": ""
+}
 
 # tiny
 net = cv2.dnn.readNet('yolov3-tiny.weights', 'yolov3-tiny.cfg')

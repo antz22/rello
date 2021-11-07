@@ -25,7 +25,7 @@ def login():
             password = request.form['password']
             try:
                 auth.sign_in_with_email_and_password(email, password)
-                return redirect('/success')
+                return redirect('/index')
             except:
                 unsuccessful = 'Please check your credentials'
                 return render_template('login.html', umessage=unsuccessful)
@@ -51,9 +51,9 @@ def forgot_password():
             return render_template('login.html')
     return render_template('forgot_password.html')
 
-@app.route('/success', methods=['GET', 'POST'])
+@app.route('/index', methods=['GET', 'POST'])
 def home():
-    return render_template('success.html')
+    return render_template('index.html')
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(port=8000, debug=True)
