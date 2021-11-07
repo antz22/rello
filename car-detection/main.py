@@ -13,7 +13,7 @@ classes = []
 with open('coco.names', 'r') as f:
     classes = f.read().splitlines()
 
-cap = cv2.VideoCapture('avoidingLeftCrash.mp4')
+cap = cv2.VideoCapture('turningLeft.mp4')
 
 
 font = cv2.FONT_HERSHEY_DUPLEX
@@ -21,6 +21,7 @@ starting_time = time.time()
 frame_id = 0
 obj_id = 0
 danger_objects = []
+high_danger_alerts = 0
 
 
 while True:
@@ -82,8 +83,10 @@ while True:
                             if value[0] in range(center_x-15, center_x+15) and value[1] in range(center_y-15, center_y+15) and time.time() - last_timestamp < 2 and value[1] > center_y:
                                 value[2]+=1
                                 # print('DANGER +1')
-                                if value[2] >= 4:
+                                if high_danger_alerts >= 5:
                                     print('WHOOP WHOOP RED DANGER ALERT!!!!')
+                                if value[2] >= 4:
+                                    high_danger_alerts += 1
                                     break
                                 added = True
                                 last_timestamp = time.time()
