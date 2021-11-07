@@ -5,7 +5,7 @@ import os
 config = {
     "apiKey": "AIzaSyAqfgMlZh4GmHvxMXcjrXC2sRcO5jWb3_4",
     "authDomain": "rello-189ed.firebaseapp.com",
-    "databaseURL": "https://rello-189ed.firebaseio.com/",
+    "databaseURL": "https://rello-189ed-default-rtdb.firebaseio.com/",
     "projectId": "rello-189ed",
     "storageBucket": "rello-189ed.appspot.com",
     "messagingSenderId": "5243701907",  
@@ -53,7 +53,17 @@ def forgot_password():
 
 @app.route('/index', methods=['GET', 'POST'])
 def home():
-    return render_template('index.html')
+
+    auth = firebase.auth()
+    user = auth.sign_in_with_email_and_password('hahahackphs@gmail.com', 'testing123123')
+    db = firebase.database()
+
+    risky_incidents_f = db.child("users").child("John").get().val()['risky-incidents']
+    timestamp_f = db.child("users").child("John").get().val()['timestamp']
+    hoursnmin_f = timestamp_f[-8:]
+
+
+    return render_template('index.html', timestamp = timestamp_f, risky_incidents = risky_incidents_f, hoursnmin = hoursnmin_f)
 
 if __name__ == '__main__':
     app.run(port=8000, debug=True)
