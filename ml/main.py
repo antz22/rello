@@ -10,13 +10,6 @@ from firebase import firebase
 
 
 config = {
-    "apiKey": "AIzaSyAqfgMlZh4GmHvxMXcjrXC2sRcO5jWb3_4",
-    "authDomain": "rello-189ed.firebaseapp.com",
-    # "databaseURL": "https://rello-189ed.firebaseio.com/",
-    "databaseURL": "https://rello-189ed-default-rtdb.firebaseio.com/",
-    "projectId": "rello-189ed",
-    "storageBucket": "rello-189ed.appspot.com",
-    "messagingSenderId": "5243701907",  
 }
 
 firebase = pyrebase.initialize_app(config)
@@ -28,8 +21,6 @@ def send_twilio_message():
 
     message = client.messages.create(
         body="Your friend or loved one has recently just experienced a potentially serious threat to their safety while driving. Call them or ask them to make sure they are okay.",
-        from_="+14097526032",
-        to="+16099551483"
     )
 
     print(message.sid)
@@ -48,11 +39,6 @@ def update_firebase():
         "timestamp": date_time,
     }
     results = db.child("users").child("Anthony").update(new_data)
-
-    # results = db.child("users").child("Anthony").set({
-    #     'risky-incidents': 0,
-    #     'timestamp': date_time,
-    # })
 
     users = db.child("users").get().val()
     print(users)
@@ -134,13 +120,8 @@ def main():
                             added = False
                             for i in range(len(danger_objects)):
                                 value = list(danger_objects[i].values())[0]
-                                # print(value)
-                                # print(value[0] in range(center_x-10, center_x+10))
-                                # print(value[1] in range(center_y-10, center_y+10))
-                                # print(time.time() - last_timestamp)
                                 if value[0] in range(center_x-15, center_x+15) and value[1] in range(center_y-15, center_y+15) and time.time() - last_timestamp < 2 and value[1] > center_y:
                                     value[2]+=1
-                                    # print('DANGER +1')
                                     if high_danger_alerts >= 5 and high_danger_alerted == False:
                                         high_danger_alerted = True
                                         print('WHOOP WHOOP RED DANGER ALERT!!!!')
@@ -156,9 +137,6 @@ def main():
                                 danger_objects.append({obj_id: [center_x, center_y, 1]})
                                 last_timestamp = time.time()
                                 obj_id += 1
-                        # print(danger_objects)
-                        # print(len(danger_objects))
-                        # print('DANGER!')
 
                     boxes.append([x, y, w, h])
                     class_ids.append(class_id)
