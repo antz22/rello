@@ -3,14 +3,14 @@ import numpy as np
 import time
 
 
-net = cv2.dnn.readNet('yolov3.weights', 'yolov3.cfg')
+net = cv2.dnn.readNet('yolov3-tiny.weights', 'yolov3.cfg')
 
 classes = []
 
 with open('coco.names', 'r') as f:
     classes = f.read().splitlines()
 
-cap = cv2.VideoCapture(0)
+cap = cv2.VideoCapture('turningLeft.mp4')
 #img = cv2.imread('image3.jpeg')
 
 
