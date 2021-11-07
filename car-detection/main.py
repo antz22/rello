@@ -10,7 +10,6 @@ classes = []
 with open('coco.names', 'r') as f:
     classes = f.read().splitlines()
 
-
 cap = cv2.VideoCapture(0)
 #img = cv2.imread('image3.jpeg')
 
@@ -23,6 +22,7 @@ frame_id = 0
 while True:
 
     _, img = cap.read()
+    # cv2.imshow('frame', frame)
     height, width, _ = img.shape
     frame_id += 1
 
